@@ -12,10 +12,10 @@ int speed=0;
  int main(void)
  { 
 
-	delay_init();	    	
-	LED_Init();		  		
-  TIM2_PWM_Init(999,1439);	
-	uart_init(100000);	 
+	delay_init();	    	 //延时函数初始化	  
+	LED_Init();		  		//初始化与LED连接的硬件接口
+  TIM2_PWM_Init(999,1439);	 //PWM频率=72000000/1000/1440=50HZ
+	uart_init(100000);	 	//串口初始化为100000
   delay_ms(1000);
   USART1_DMA_RX();
   TIM_SetCompare2(TIM2,800);
